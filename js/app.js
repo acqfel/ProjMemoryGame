@@ -137,10 +137,10 @@ function openCards(card){
 }
 
 function starRating() {
-    if ( movesNumber === 4 ) {
+    if ( movesNumber === 30 ) {
         $('.stars li:nth-child(1)').children().removeClass('rating');
     }
-    if ( movesNumber === 6 ) {
+    if ( movesNumber === 60 ) {
         $('.stars li:nth-child(2)').children().removeClass('rating');
     }
 }
@@ -201,7 +201,7 @@ function lockCards() {
                 // unblock to choice other cards
                 blockClick = false;
                 cardsMatched++;
-                if (cardsMatched == 2){
+                if (cardsMatched == 8){
 
                     window.confirm("You Win\n"+
                                     "Moves: "+movesNumber+
