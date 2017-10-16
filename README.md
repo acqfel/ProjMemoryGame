@@ -1,2 +1,7 @@
-# ProjMemoryGame
-Memory Card Game
+# Memory Game Project
+
+## Table of Contents
+
+* [Instructions](#instructions)
+
+## Instructions
