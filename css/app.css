@@ -133,3 +133,65 @@ justify-content: center;
 .modal-content {
     text-align: center;
 }
+
+/*
+ *  Media query
+ */
+@media screen and (max-width: 700px) {
+    .deck {
+        width: 560px;
+        min-height: 580px;
+    }
+    .deck .card {
+        height: 100px !important;
+        width: 100px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .deck {
+        width: 460px;
+        min-height: 480px;
+    }
+    .deck .card {
+        height: 80px !important;
+        width: 80px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .deck {
+        width: 360px;
+        min-height: 380px;
+    }
+    .deck .card {
+        height: 60px !important;
+        width: 60px !important;
+    }
+    .deck .card.show2 {
+        font-size: 25px;
+    }
+    .deck .card.match {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .deck {
+        width: 300px;
+        min-height: 320px;
+    }
+    .deck .card {
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .deck .card.show2 {
+        font-size: 20px;
+    }
+    .deck .card.match {
+        font-size: 20px;
+    }
+    .score-panel {
+        width: 250px;
+    }
+}

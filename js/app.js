@@ -194,30 +194,38 @@ function lockCards() {
     listOpenCards[0].removeClass('open show2').addClass('match');
     listOpenCards[1].removeClass('open show2').addClass('match');
     listOpenCards[0].animate({
-            height: '+=10px',
-            width: '+=10px'
+            opacity: '0.0'
+            // height: '+=10px',
+            // width: '+=10px'
         },100).animate({
-        	height: '-=10px',
-            width: '-=10px'
+            opacity: '1.0'
+            // height: '-=10px',
+            // width: '-=10px'
         },100).animate({
-            height: '+=10px',
-            width: '+=10px'
+            opacity: '0.0'
+            // height: '+=10px',
+            // width: '+=10px'
         },100).animate({
-        	height: '-=10px',
-            width: '-=10px'
+            opacity: '1.0'
+        	// height: '-=10px',
+            // width: '-=10px'
         },100);
     listOpenCards[1].animate({
-            height: '+=10px',
-            width: '+=10px'
+            opacity: '0.0'
+            // height: '+=10px',
+            // width: '+=10px'
         },100).animate({
-        	height: '-=10px',
-            width: '-=10px'
+            opacity: '1.0'
+        	// height: '-=10px',
+            // width: '-=10px'
         },100).animate({
-            height: '+=10px',
-            width: '+=10px'
+            opacity: '0.0'
+            // height: '+=10px',
+            // width: '+=10px'
         },100).animate({
-        	height: '-=10px',
-            width: '-=10px'
+            opacity: '1.0'
+        	// height: '-=10px',
+            // width: '-=10px'
         },100, function() {
                 listOpenCards[0].off("click");
                 listOpenCards[1].off("click");
@@ -226,7 +234,7 @@ function lockCards() {
                 // unblock to choice other cards
                 blockClick = false;
                 cardsMatched++;
-                if (cardsMatched == 1){
+                if (cardsMatched == 8){
                     $('#myModal').modal('toggle');
                     $('#moves-number').text(movesNumber);
                     $('#counter-time').text(counterTime);
