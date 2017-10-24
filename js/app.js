@@ -20,6 +20,7 @@ let cardsMatched = 0;
 let counterTime = 0;
 let myInterval;
 let starsNumber = 3;
+let firstCard = true;
 
 /*
  * Display the cards on the page
@@ -77,6 +78,7 @@ function restart() {
     movesNumber = 0;
     cardsMatched = 0;
     counterTime = 0;
+    firstCard = true;
     // to stop the counter
     clearInterval(myInterval);
 
@@ -85,10 +87,11 @@ function restart() {
 
     shuffle(allCards);
     cardHtml(allCards);
+    $('#txt').text(counterTime);
     $('.moves').text(movesNumber);
     $('.stars li').children().addClass('rating');
     starsNumber = 3;
-    startTime();
+    //startTime();
 }
 
 // @description Event listener for a restart button
@@ -113,10 +116,15 @@ function startTime() {
      }, 1000);
  }
 
-startTime();
-
  // @description Event listener for a card
  $( '#deck' ).on( 'click', 'li', function( evt ) {
+     // Start counting time
+     if (firstCard) {
+         startTime();
+         firstCard = false;
+     }
+
+
      let clickedCard = $( evt.target );
 
      if (!blockClick) {
@@ -218,14 +226,13 @@ function lockCards() {
                 // unblock to choice other cards
                 blockClick = false;
                 cardsMatched++;
-                if (cardsMatched == 8){
+                if (cardsMatched == 1){
                     $('#myModal').modal('toggle');
                     $('#moves-number').text(movesNumber);
                     $('#counter-time').text(counterTime);
                     $('#stars-number').text(starsNumber);
-                    // window.confirm("You Win\n"+
-                    //                 "Moves: "+movesNumber+
-                    //                 "\nTime elapsed: "+counterTime+" seconds");
+                    // Stop the timer
+                    clearInterval(myInterval);
                     //restart();
                 }
 
